@@ -1,2 +1,3 @@
 rootProject.name='PluginKit'
 include ':app'
+include ':common-annotation'
