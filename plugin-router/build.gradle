@@ -1,5 +1,5 @@
 apply plugin: 'groovy'
-apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.dcendents.android-maven'
 
 
 dependencies {
@@ -10,10 +10,10 @@ dependencies {
     implementation localGroovy()
     //Android编译的大部分gradle源码，比如上面的TaskManager、TransformManager
     implementation 'com.android.tools.build:gradle:3.5.3'
-    implementation "com.github.Xiasm.PluginKit:common-annotation:${PLUGIN_KIT_VERSION}"
-    implementation "com.github.Xiasm.PluginKit:pluginkit-base:${PLUGIN_KIT_VERSION}"
+    implementation "com.github.Xiasm.PluginKit:common-annotation:0.0.5"
+    implementation "com.github.Xiasm.PluginKit:pluginkit-base:0.0.5"
 
 
 }
 
-group='com.github.Xiasm'
+//group='com.github.Xiasm'

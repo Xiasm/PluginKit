@@ -1,4 +1,4 @@
-package com.xiasm.pluginkit.pluginkit;
+package com.xiasm.pluginkit.sample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
