@@ -13,6 +13,7 @@ buildscript {
         //jitpack.io 发布插件
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 
+        classpath 'com.github.Xiasm.PluginKit:plugin-router:0.0.6'
 
     }
 }
