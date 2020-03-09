@@ -1,0 +1,16 @@
+apply plugin: 'groovy'
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //使用项目中指定的gradle wrapper版本，插件中使用的Project对象等就来自这里
+    implementation gradleApi()
+    //使用本地的groovy
+    implementation localGroovy()
+    //Android编译的大部分gradle源码，比如上面的TaskManager、TransformManager
+    implementation 'com.android.tools.build:gradle:3.5.3'
+    implementation 'com.github.Xiasm.PluginKit:common-annotation:0.0.4'
+    implementation 'com.github.Xiasm.PluginKit:pluginkit-base:0.0.4'
+
+
+}
