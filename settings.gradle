@@ -1,3 +1,4 @@
 rootProject.name='PluginKit'
 include ':app'
 include ':common-annotation'
+include ':router-core'
