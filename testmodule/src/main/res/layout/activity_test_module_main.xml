@@ -5,18 +5,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".TestModuleMainActivity">
 
 
     <TextView
-        android:text="Sample Activity"
+        android:text="TestModule Activity"
         android:layout_width="match_parent"
         android:layout_height="100dp"/>
 
 
     <Button
-        android:text="跳转 TestModuleMainActivity"
-        android:onClick="startTextModule"
+        android:text="跳转 MainActivity"
+        android:onClick="startSampleMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

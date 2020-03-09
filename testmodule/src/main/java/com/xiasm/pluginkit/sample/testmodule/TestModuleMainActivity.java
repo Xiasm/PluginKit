@@ -1,4 +1,4 @@
-package com.xiasm.pluginkit.sample;
+package com.xiasm.pluginkit.sample.testmodule;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,16 +8,16 @@ import android.view.View;
 import com.xiasm.pluginkit.common.annotation.Router;
 import com.xiasm.pluginkit.router.core.RouterManager;
 
-@Router("/sample/main")
-public class MainActivity extends AppCompatActivity {
+@Router("/testmodule/main")
+public class TestModuleMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test_module_main);
     }
 
-    public void startTextModule(View view) {
-        RouterManager.getInstance().start(this, "/testmodule/main");
+    public void startSampleMain(View view) {
+        RouterManager.getInstance().start(this, "/sample/main");
     }
 }
