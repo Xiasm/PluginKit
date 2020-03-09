@@ -1,33 +1,17 @@
-apply plugin: 'com.android.library'
-
-android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.1"
-
-    defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-}
+apply plugin: 'groovy'
+apply plugin: 'com.github.dcendents.android-maven'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //使用项目中指定的gradle wrapper版本，插件中使用的Project对象等就来自这里
+    implementation gradleApi()
+    //使用本地的groovy
+    implementation localGroovy()
+    //Android编译的大部分gradle源码，比如上面的TaskManager、TransformManager
+    implementation 'com.android.tools.build:gradle:3.5.3'
+    implementation "com.github.Xiasm.PluginKit:common-annotation:${PLUGIN_KIT_VERSION}"
+    implementation "com.github.Xiasm.PluginKit:pluginkit-base:${PLUGIN_KIT_VERSION}"
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+
+group='com.github.Xiasm'
