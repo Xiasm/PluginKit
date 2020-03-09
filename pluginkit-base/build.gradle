@@ -10,12 +10,12 @@ dependencies {
     //使用本地的groovy
     implementation localGroovy()
     //Android编译的大部分gradle源码，比如上面的TaskManager、TransformManager
-    implementation 'com.android.tools.build:gradle:3.5.3'
+    compile 'com.android.tools.build:gradle:3.5.3'
 
     //ASM相关
-    implementation 'org.ow2.asm:asm:5.1'
-    implementation 'org.ow2.asm:asm-util:5.1'
-    implementation 'org.ow2.asm:asm-commons:5.1'
+    compile 'org.ow2.asm:asm:5.1'
+    compile 'org.ow2.asm:asm-util:5.1'
+    compile 'org.ow2.asm:asm-commons:5.1'
 }
 
 group='com.github.Xiasm'
