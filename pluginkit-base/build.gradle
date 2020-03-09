@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'com.github.dcendents.android-maven'
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //使用项目中指定的gradle wrapper版本，插件中使用的Project对象等就来自这里
+    implementation gradleApi()
+    //使用本地的groovy
+    implementation localGroovy()
+    //Android编译的大部分gradle源码，比如上面的TaskManager、TransformManager
+    implementation 'com.android.tools.build:gradle:3.5.3'
+
+    //ASM相关
+    implementation 'org.ow2.asm:asm:5.1'
+    implementation 'org.ow2.asm:asm-util:5.1'
+    implementation 'org.ow2.asm:asm-commons:5.1'
+}
+
+group='com.github.Xiasm'
