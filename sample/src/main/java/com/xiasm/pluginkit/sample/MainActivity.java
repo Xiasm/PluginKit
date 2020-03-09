@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * 通过路由插件进行模块跳转
+     * @param view
+     */
     public void startTextModule(View view) {
         RouterManager.getInstance().start(this, "/testmodule/main");
     }
