@@ -40,12 +40,11 @@ public class TraceTransform extends AsmBaseTransform {
 
 
     @Override
-    void processDirClass(String s, File file) {
+    void processDirClass(String className, File classFile) {
         ClassReader classReader = new ClassReader(classFile.bytes)
         ClassWriter classWriter = new ClassWriter(classReader, ClassWriter.COMPUTE_MAXS)
         TraceClassFileVisitor classVisitor = new TraceClassFileVisitor(Opcodes.ASM5, classWriter)
         classReader.accept(classVisitor, ClassReader.EXPAND_FRAMES)
-        processAnnotation(classVisitor)
     }
 
     @Override
@@ -55,7 +54,6 @@ public class TraceTransform extends AsmBaseTransform {
         ClassWriter classWriter = new ClassWriter(classReader, ClassWriter.COMPUTE_MAXS)
         TraceClassFileVisitor classVisitor = new TraceClassFileVisitor(Opcodes.ASM5, classWriter)
         classReader.accept(classVisitor, ClassReader.EXPAND_FRAMES)
-        processAnnotation(classVisitor)
         inputStream.close()
     }
 

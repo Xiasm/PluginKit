@@ -1,5 +1,7 @@
 apply plugin: 'groovy'
-apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven'
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -14,4 +16,15 @@ dependencies {
 
 }
 
-group='com.github.Xiasm'
+//group='com.github.Xiasm'
+
+group = 'com.xiasm.pluginkit.trace'
+version = '0.2.1'
+
+uploadArchives{
+    repositories {
+        mavenDeployer{
+            repository(url: uri('file://'+rootDir.absolutePath +'/PluginKitRepo'))
+        }
+    }
+}
