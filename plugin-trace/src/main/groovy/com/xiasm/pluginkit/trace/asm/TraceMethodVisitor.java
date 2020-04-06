@@ -4,6 +4,7 @@ import com.xiasm.pluginkit.common.annotation.MethodTrace;
 
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.commons.AdviceAdapter;
 
@@ -11,6 +12,7 @@ public class TraceMethodVisitor extends AdviceAdapter {
     private boolean needInject = false;
     private MethodVisitor mv;
     private String methodName;
+    private TraceAnnotationVisitor annotationVisitor;
 
     public TraceMethodVisitor(int api, MethodVisitor mv, int access, String name, String desc) {
         super(api, mv, access, name, desc);
@@ -22,6 +24,7 @@ public class TraceMethodVisitor extends AdviceAdapter {
     public AnnotationVisitor visitAnnotation(String desc, boolean visible) {
         if (Type.getDescriptor(MethodTrace.class).equals(desc)) {
             needInject = true;
+            return new TraceAnnotationVisitor(Opcodes.ASM5, annotationVisitor);
         }
         return super.visitAnnotation(desc, visible);
     }

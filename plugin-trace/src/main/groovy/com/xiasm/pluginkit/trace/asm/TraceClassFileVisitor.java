@@ -7,7 +7,6 @@ import org.objectweb.asm.Opcodes;
 public class TraceClassFileVisitor extends ClassVisitor {
     private String className;
     private TraceMethodVisitor methodVisitor;
-    private TraceAnnotationVisitor annotationVisitor;
 
     public TraceClassFileVisitor(int api, ClassVisitor cv) {
         super(api, cv);

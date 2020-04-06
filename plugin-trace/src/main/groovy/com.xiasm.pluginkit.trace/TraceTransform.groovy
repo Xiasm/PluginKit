@@ -45,6 +45,10 @@ public class TraceTransform extends AsmBaseTransform {
         ClassWriter classWriter = new ClassWriter(classReader, ClassWriter.COMPUTE_MAXS)
         TraceClassFileVisitor classVisitor = new TraceClassFileVisitor(Opcodes.ASM5, classWriter)
         classReader.accept(classVisitor, ClassReader.EXPAND_FRAMES)
+
+        FileOutputStream fos = new FileOutputStream(classFile.path)
+        fos.write(classWriter.toByteArray())
+        fos.close()
     }
 
     @Override
